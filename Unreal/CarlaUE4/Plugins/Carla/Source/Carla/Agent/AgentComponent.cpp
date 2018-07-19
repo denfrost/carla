@@ -27,7 +27,7 @@ UAgentComponent::UAgentComponent(const FObjectInitializer& ObjectInitializer)
 {
   bVisible = false;
   bHiddenInGame = true;
-  bShouldUpdatePhysicsVolume = false;
+  SetShouldUpdatePhysicsVolume(false);
   PrimaryComponentTick.bCanEverTick = false;
 }
 
@@ -43,7 +43,7 @@ void UAgentComponent::BeginPlay()
   if (bRegisterAgentComponent)
   {
     /**
-      * This only returns true if the current game mode is not null 
+      * This only returns true if the current game mode is not null
       * because you can only access a game mode if you are the host
       * @param oftheworld UWorld is needed to access the game mode
       * @return true if there is a game mode and it is not null
